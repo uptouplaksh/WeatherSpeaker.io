@@ -42,10 +42,6 @@ def weather_reader():
         info_dict_wind_speed_kph = info_dict["current"]["wind_kph"]
         info_dict_wind_direction = info_dict["current"]["wind_dir"]
 
-        """ 
-        meerut is located in the region of uttar pradesh in the country india. the temperature in meerut is _ degrees Celsius and _ degrees fahrenheit but it feels like _ degrees celsius
-        and _ degrees fahrenheit respectively, the speed of wind in meerut is _ miles per hour and _ kilometers per hour and the wind is flowing towards _ direction
-        """
         # gives the output
         speaks = gtts.gTTS(
             f"{city_name} is located in the region of {info_dict_location_region} in {info_dict_location_country}. The temperature in {city_name} is {info_dict_temp_in_c} degrees celsius and {info_dict_temp_in_f} degrees fahrenheit but it feels like {info_dict_temp_feelslike_in_c} degrees celsius and {info_dict_temp_feelslike_in_f} degrees fahrenheit respectively. The speed of wind in {city_name} is {info_dict_wind_speed_mph} miles per hour or {info_dict_wind_speed_kph} kilometers per hour")
