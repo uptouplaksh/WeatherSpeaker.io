@@ -27,9 +27,10 @@ def weather_reader():
         speaks = gtts.gTTS(f'you asked for the details of {city_name}')
         speaks.save('city_name.mp3')
         playsound('city_name.mp3')
+        api_key = "" # store your api key in this variable
 
         # fetches the details
-        url = f'https://api.weatherapi.com/v1/current.json?key=9758dd7b099a4e52b53184228231004&q={city_name}'
+        url = f'https://api.weatherapi.com/v1/current.json?key={api_key}{city_name}'
         info = requests.get(url)
         info_dict = json.loads(info.text)
         info_dict_location_region = info_dict['location']['region']
